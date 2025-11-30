@@ -8,43 +8,48 @@
       "password": "123",
       "phone": "555-0199",
       "address": "Headquarters",
-      "isActive": false,
-      "shifts": []
+      "isActive": true,
+      "shifts": [
+        {
+          "start": "2025-11-30T12:46:10.187",
+          "end": null
+        }
+      ]
     }
   ],
   "menu": [
     {
       "id": "m_001",
       "name": "Classic Burger",
-      "price": 15.0,
-      "cost": 5.0,
+      "price": 15,
+      "cost": 5,
       "category": "Main Course"
     },
     {
       "id": "m_002",
       "name": "Margherita Pizza",
-      "price": 12.0,
-      "cost": 4.0,
+      "price": 12,
+      "cost": 4,
       "category": "Main Course"
     },
     {
       "id": "m_003",
       "name": "Caesar Salad",
-      "price": 10.0,
+      "price": 10,
       "cost": 3.5,
       "category": "Salad"
     },
     {
       "id": "m_004",
       "name": "Coca Cola",
-      "price": 3.0,
-      "cost": 1.0,
+      "price": 3,
+      "cost": 1,
       "category": "Drink"
     },
     {
       "id": "m_005",
       "name": "Cheesecake",
-      "price": 8.0,
+      "price": 8,
       "cost": 2.5,
       "category": "Dessert"
     }
