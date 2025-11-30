@@ -60,7 +60,7 @@ class _KitchenPageState extends State<KitchenPage> {
     );
   }
 
-  // --- EKLEME VE DÜZENLEME ---
+  // --- ADDING AND EDITING ---
   void _showPersonDialog({Person? existingPerson}) {
     final nameCtrl = TextEditingController(text: existingPerson?.name ?? "");
     final userCtrl =

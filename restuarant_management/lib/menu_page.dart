@@ -34,12 +34,40 @@ class _MenuPageState extends State<MenuPage> {
     }
   }
 
+  // --- DELETE CONFIRMATION DIALOG ---
+  void _confirmDelete(MenuItem item) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text("Delete Product"),
+        content: Text("Are you sure you want to delete '${item.name}'?"),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text("Cancel"),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.red,
+              foregroundColor: Colors.white,
+            ),
+            onPressed: () {
+              Navigator.pop(context); // Close the dialog
+              _deleteItem(item.id!); // Perform deletion
+            },
+            child: const Text("Delete"),
+          ),
+        ],
+      ),
+    );
+  }
+
   void _deleteItem(String id) async {
     await _apiService.deleteMenuItem(id);
     _loadMenu();
   }
 
-// --- ADDING A PRODUCT (Cost Included) ---
+// --- ADDING A PRODUCT ---
   void _showAddDialog() {
     final nameCtrl = TextEditingController();
     final priceCtrl = TextEditingController();
@@ -190,6 +218,10 @@ class _MenuPageState extends State<MenuPage> {
                     padding: const EdgeInsets.all(16.0),
                     child: ElevatedButton.icon(
                         onPressed: _showAddDialog,
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blue,
+                            foregroundColor: Colors.white,
+                            minimumSize: const Size(double.infinity, 50)),
                         icon: const Icon(Icons.add),
                         label: const Text("Add Product"))),
                 const SizedBox(height: 20)
@@ -210,14 +242,13 @@ class _MenuPageState extends State<MenuPage> {
                         child: Text(item.name[0].toUpperCase())),
                     title: Text(item.name,
                         style: const TextStyle(fontWeight: FontWeight.bold)),
-                    // Fiyat ve Kar Bilgisi
                     subtitle: Text(
                         "Sale: ${item.price} Ft | Cost: ${item.cost} Ft | Profit: ${profit.toStringAsFixed(1)} Ft",
                         style: TextStyle(
                             color: profit > 0 ? Colors.green : Colors.red)),
                     trailing: IconButton(
                         icon: const Icon(Icons.delete, color: Colors.red),
-                        onPressed: () => _deleteItem(item.id!)),
+                        onPressed: () => _confirmDelete(item)), // Changed here
                   ),
                 );
               },

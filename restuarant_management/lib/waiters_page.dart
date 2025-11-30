@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; // InputFormatters için gerekli
+import 'package:flutter/services.dart';
 import 'person.dart';
 import 'api_service.dart';
 
@@ -275,7 +275,7 @@ class _WaitersPageState extends State<WaitersPage> {
                             minimumSize: const Size(double.infinity, 50)),
                         onPressed: () => _showPersonDialog(),
                         icon: const Icon(Icons.add),
-                        label: const Text("Garson Ekle"))),
+                        label: const Text("Add Waiter"))),
                 const SizedBox(height: 20)
               ])),
           Expanded(
@@ -284,20 +284,21 @@ class _WaitersPageState extends State<WaitersPage> {
               children: [
                 Row(children: [
                   _buildSummaryCard(
-                      "Toplam Garson", total.toString(), Colors.blue),
+                      "Total Waiter", total.toString(), Colors.blue),
                   const SizedBox(width: 16),
-                  _buildSummaryCard("Aktif", active.toString(), Colors.green),
+                  _buildSummaryCard("Active", active.toString(), Colors.green),
                   const SizedBox(width: 16),
                   _buildSummaryCard(
-                      "Çalışmıyor", inactive.toString(), Colors.grey)
+                      "Not working", inactive.toString(), Colors.grey)
                 ]),
                 const SizedBox(height: 30),
-                const Text("Garson Listesi",
+                const Text("Waiter List",
                     style:
                         TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 16),
                 if (waiters.isEmpty)
-                  const Center(child: Text("Henüz kayıtlı garson yok."))
+                  const Center(
+                      child: Text("There are no waiters registered yet."))
                 else
                   GridView.builder(
                       shrinkWrap: true,
@@ -383,13 +384,13 @@ class _WaitersPageState extends State<WaitersPage> {
                         Row(children: [
                           IconButton(
                               icon: const Icon(Icons.edit, color: Colors.blue),
-                              tooltip: "Düzenle",
+                              tooltip: "Edit",
                               onPressed: () =>
                                   _showPersonDialog(existingPerson: p)),
                           IconButton(
                               icon: const Icon(Icons.delete_forever,
                                   color: Colors.red),
-                              tooltip: "Sil",
+                              tooltip: "Delete",
                               onPressed: () => _deleteWaiter(p.id!, p.name))
                         ])
                       ]),
@@ -398,7 +399,7 @@ class _WaitersPageState extends State<WaitersPage> {
                           fontWeight: FontWeight.bold, fontSize: 16),
                       textAlign: TextAlign.center,
                       overflow: TextOverflow.ellipsis),
-                  Text(p.phone.isNotEmpty ? p.phone : "Tel Yok",
+                  Text(p.phone.isNotEmpty ? p.phone : "No Phone",
                       style: const TextStyle(fontSize: 12, color: Colors.grey)),
                   Container(
                       padding: const EdgeInsets.symmetric(
@@ -408,7 +409,7 @@ class _WaitersPageState extends State<WaitersPage> {
                               ? Colors.green.shade200
                               : Colors.grey.shade200,
                           borderRadius: BorderRadius.circular(12)),
-                      child: Text("${p.totalHours} Saat",
+                      child: Text("${p.totalHours} Hour",
                           style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,

@@ -2,181 +2,73 @@
   "staff": [
     {
       "id": "admin_001",
-      "name": "Manager Alice",
+      "name": "General Manager",
       "role": "Manager",
       "username": "admin",
       "password": "123",
-      "phone": "555-0000",
+      "phone": "555-0199",
       "address": "Headquarters",
-      "isActive": false,
-      "shifts": [
-        {
-          "start": "2025-11-25T22:40:43.588",
-          "end": null
-        },
-        {
-          "start": "2025-11-25T22:42:13.147",
-          "end": null
-        },
-        {
-          "start": "2025-11-26T00:30:48.368",
-          "end": null
-        },
-        {
-          "start": "2025-11-26T00:31:00.996",
-          "end": null
-        },
-        {
-          "start": "2025-11-26T00:47:58.933",
-          "end": "2025-11-26T00:54:18.020"
-        },
-        {
-          "start": "2025-11-26T00:58:05.444",
-          "end": "2025-11-26T00:58:43.386"
-        },
-        {
-          "start": "2025-11-26T01:01:00.829",
-          "end": "2025-11-26T01:01:32.769"
-        },
-        {
-          "start": "2025-11-26T01:06:34.470",
-          "end": null
-        },
-        {
-          "start": "2025-11-26T01:14:24.827",
-          "end": null
-        },
-        {
-          "start": "2025-11-26T01:20:39.172",
-          "end": null
-        },
-        {
-          "start": "2025-11-26T01:21:21.322",
-          "end": null
-        },
-        {
-          "start": "2025-11-26T01:27:51.257",
-          "end": null
-        },
-        {
-          "start": "2025-11-26T01:29:27.935",
-          "end": null
-        },
-        {
-          "start": "2025-11-26T01:40:42.946",
-          "end": null
-        },
-        {
-          "start": "2025-11-26T01:42:43.402",
-          "end": null
-        },
-        {
-          "start": "2025-11-26T01:44:29.948",
-          "end": null
-        },
-        {
-          "start": "2025-11-26T01:52:35.449",
-          "end": "2025-11-26T01:55:34.251"
-        },
-        {
-          "start": "2025-11-26T02:07:05.033",
-          "end": null
-        },
-        {
-          "start": "2025-11-26T02:14:20.999",
-          "end": null
-        },
-        {
-          "start": "2025-11-26T02:26:51.302",
-          "end": "2025-11-26T02:35:47.332"
-        },
-        {
-          "start": "2025-11-26T02:36:47.273",
-          "end": "2025-11-26T02:40:04.130"
-        },
-        {
-          "start": "2025-11-26T02:40:52.739",
-          "end": "2025-11-26T13:32:03.568"
-        },
-        {
-          "start": "2025-11-26T13:37:17.994",
-          "end": null
-        },
-        {
-          "start": "2025-11-29T18:21:36.910",
-          "end": null
-        },
-        {
-          "start": "2025-11-29T18:23:07.977",
-          "end": "2025-11-29T18:26:00.536"
-        }
-      ]
-    },
-    {
-      "name": "John Doe",
-      "role": "Waiter",
-      "username": "john",
-      "password": "123",
-      "phone": "+15550199",
-      "address": "84 Main Street",
-      "isActive": true,
-      "shifts": [
-        {
-          "start": "2025-11-26T02:00:57.435",
-          "end": "2025-11-26T02:06:53.134"
-        },
-        {
-          "start": "2025-11-26T13:36:53.853",
-          "end": "2025-11-26T13:40:51.238"
-        },
-        {
-          "start": "2025-11-29T18:27:28.067",
-          "end": null
-        }
-      ],
-      "id": "7043"
-    },
-    {
-      "id": "e048",
-      "name": "Chef Gordon",
-      "role": "Kitchen",
-      "username": "gordon",
-      "password": "123",
-      "phone": "555123456",
-      "address": "4241 Home Avenue",
       "isActive": false,
       "shifts": []
     }
   ],
   "menu": [
     {
-      "id": "dfc1",
-      "name": "Test Product",
-      "price": 10,
-      "cost": 3,
-      "category": "Drink"
-    }
-  ],
-  "orders": [
+      "id": "m_001",
+      "name": "Classic Burger",
+      "price": 15.0,
+      "cost": 5.0,
+      "category": "Main Course"
+    },
     {
-      "id": "7eba",
-      "table": "G1",
-      "time": "18:27",
-      "fullDate": "2025-11-29T18:27:00.034",
-      "preview": "4x Test Product",
-      "note": "",
-      "orderNo": "#20034",
-      "status": "Completed",
-      "products": [
-        "4x Test Product"
-      ],
-      "waiter": "John Doe"
+      "id": "m_002",
+      "name": "Margherita Pizza",
+      "price": 12.0,
+      "cost": 4.0,
+      "category": "Main Course"
+    },
+    {
+      "id": "m_003",
+      "name": "Caesar Salad",
+      "price": 10.0,
+      "cost": 3.5,
+      "category": "Salad"
+    },
+    {
+      "id": "m_004",
+      "name": "Coca Cola",
+      "price": 3.0,
+      "cost": 1.0,
+      "category": "Drink"
+    },
+    {
+      "id": "m_005",
+      "name": "Cheesecake",
+      "price": 8.0,
+      "cost": 2.5,
+      "category": "Dessert"
     }
   ],
+  "orders": [],
   "tables": [
     {
-      "id": "4f0d",
+      "id": "t_001",
+      "name": "T1",
+      "isOccupied": false
+    },
+    {
+      "id": "t_002",
+      "name": "T2",
+      "isOccupied": false
+    },
+    {
+      "id": "t_003",
       "name": "G1",
+      "isOccupied": false
+    },
+    {
+      "id": "t_004",
+      "name": "G2",
       "isOccupied": false
     }
   ]

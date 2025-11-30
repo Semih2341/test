@@ -51,7 +51,6 @@ class _DashboardHomeState extends State<DashboardHome> {
     String todayStr = "${now.year}-${now.month}-${now.day}";
 
     for (var order in orders) {
-      // 1. TARİH KONTROLÜ: Sadece bugünün siparişleri
       if (order['fullDate'] != null) {
         try {
           DateTime orderDate = DateTime.parse(order['fullDate']);
@@ -120,7 +119,7 @@ class _DashboardHomeState extends State<DashboardHome> {
     bool? confirm = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text("Masa Durumu"),
+        title: const Text("Table Status"),
         content: Text("Do you want to $action ${table.name}"),
         actions: [
           TextButton(
@@ -206,19 +205,19 @@ class _DashboardHomeState extends State<DashboardHome> {
                       children: [
                         _summaryCard(
                             "Total Turnover",
-                            "${totalSales.toStringAsFixed(0)} ₺",
+                            "${totalSales.toStringAsFixed(0)} Ft",
                             Icons.account_balance_wallet,
                             Colors.blue),
                         const SizedBox(width: 20),
                         _summaryCard(
                             "Total Cost",
-                            "${totalCost.toStringAsFixed(0)} ₺",
+                            "${totalCost.toStringAsFixed(0)} Ft",
                             Icons.shopping_bag,
                             Colors.orange),
                         const SizedBox(width: 20),
                         _summaryCard(
                             totalProfit >= 0 ? "Net Profit" : "Loss",
-                            "${totalProfit.abs().toStringAsFixed(0)} ₺",
+                            "${totalProfit.abs().toStringAsFixed(0)} Ft",
                             totalProfit >= 0
                                 ? Icons.trending_up
                                 : Icons.trending_down,

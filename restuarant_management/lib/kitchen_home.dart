@@ -99,7 +99,6 @@ class _KitchenHomeState extends State<KitchenHome> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        // Üst Bilgi: Masa ve Saat
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -114,13 +113,11 @@ class _KitchenHomeState extends State<KitchenHome> {
                           ],
                         ),
                         const Divider(thickness: 2),
-
                         const Text("Order Content:",
                             style: TextStyle(
                                 color: Colors.grey,
                                 fontWeight: FontWeight.bold)),
                         const SizedBox(height: 8),
-
                         ...products.map((item) => Padding(
                               padding:
                                   const EdgeInsets.symmetric(vertical: 4.0),
@@ -130,7 +127,6 @@ class _KitchenHomeState extends State<KitchenHome> {
                                     fontSize: 22, fontWeight: FontWeight.w600),
                               ),
                             )),
-
                         if (order['note'] != "") ...[
                           const SizedBox(height: 16),
                           Container(
@@ -155,9 +151,7 @@ class _KitchenHomeState extends State<KitchenHome> {
                             ),
                           ),
                         ],
-
                         const SizedBox(height: 20),
-
                         SizedBox(
                           width: double.infinity,
                           height: 50,

@@ -62,12 +62,9 @@ class _WaiterOrderPageState extends State<WaiterOrderPage> {
 
     await _apiService.addOrder({
       "table": widget.table.name,
-      // Sadece saat (Görünüm için):
       "time":
           "${now.hour.toString().padLeft(2, '0')}:${now.minute.toString().padLeft(2, '0')}",
-      // 🔥 YENİ: Tam Tarih (Filtreleme ve İstatistik için):
       "fullDate": now.toIso8601String(),
-
       "preview":
           productStrings.first + (productStrings.length > 1 ? "..." : ""),
       "note": noteController.text.trim(),
@@ -119,7 +116,7 @@ class _WaiterOrderPageState extends State<WaiterOrderPage> {
                                         style: const TextStyle(
                                             fontSize: 18,
                                             fontWeight: FontWeight.bold)),
-                                    Text("${item.price} ₺",
+                                    Text("${item.price} Ft",
                                         style: const TextStyle(
                                             color: Colors.grey,
                                             fontWeight: FontWeight.bold))

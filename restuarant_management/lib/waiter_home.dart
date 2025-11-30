@@ -16,7 +16,6 @@ class WaiterHome extends StatefulWidget {
 class _WaiterHomeState extends State<WaiterHome> {
   int _currentIndex = 0;
 
-  // --- GÜVENLİ ÇIKIŞ İŞLEMİ ---
   void _confirmLogout() {
     showDialog(
       context: context,
@@ -69,7 +68,7 @@ class _WaiterHomeState extends State<WaiterHome> {
           IconButton(
             icon: const Icon(Icons.logout),
             tooltip: "End The Shift",
-            onPressed: _confirmLogout, // Onay kutusunu açar
+            onPressed: _confirmLogout,
           )
         ],
       ),
@@ -90,7 +89,6 @@ class _WaiterHomeState extends State<WaiterHome> {
   }
 }
 
-// --- 1. SEKME: MASALAR GÖRÜNÜMÜ ---
 class WaiterTablesView extends StatefulWidget {
   final String waiterName;
   const WaiterTablesView({super.key, required this.waiterName});
@@ -291,7 +289,7 @@ class _WaiterOrdersViewState extends State<WaiterOrdersView> {
   }
 
   void _showOrderOptions(Map<String, dynamic> order) {
-    bool isReady = order['status'] == 'Ready'; // Durum kontrolü
+    bool isReady = order['status'] == 'Ready';
 
     showModalBottomSheet(
       context: context,
@@ -312,7 +310,7 @@ class _WaiterOrdersViewState extends State<WaiterOrdersView> {
                     style: TextStyle(fontSize: 12, color: Colors.red)),
             onTap: () async {
               if (!isReady) {
-                Navigator.pop(context); // Menüyü kapat
+                Navigator.pop(context);
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
                     content: Text(
@@ -332,10 +330,7 @@ class _WaiterOrdersViewState extends State<WaiterOrdersView> {
               }
             },
           ),
-
           const Divider(),
-
-          // 2. SİLME / İPTAL BUTONU
           ListTile(
             leading: const Icon(Icons.cancel, color: Colors.red),
             title: const Text('Cancel Order'),
